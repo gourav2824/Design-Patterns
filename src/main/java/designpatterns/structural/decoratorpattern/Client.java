@@ -10,5 +10,12 @@ public class Client {
 
         System.out.println(name.getData());
         System.out.println(name.readData());
+
+        final Identity anotherName = new SquareBracesDecorator(new CurlyBracesDecorator(new Name()));
+
+        anotherName.writeData("Tom");
+
+        System.out.println(anotherName.getData());
+        System.out.println(anotherName.readData());
     }
 }
