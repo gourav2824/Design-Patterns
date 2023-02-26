@@ -7,13 +7,19 @@ public class CurlyBracesDecorator extends IdentityDecorator {
 
     @Override
     public void writeData(String data) {
-        final String decoratedData = "{" + data + "}";
-        super.writeData(decoratedData);
+        super.writeData(addCurlyBraces(data));
     }
 
     @Override
     public String readData() {
-        final String decoratedData = super.readData();
-        return decoratedData.substring(1, decoratedData.length() - 1);
+        return removeCurlyBraces(super.readData());
+    }
+
+    private String addCurlyBraces(String data) {
+        return "{" + data + "}";
+    }
+
+    private String removeCurlyBraces(String data) {
+        return data.substring(1, data.length() - 1);
     }
 }
