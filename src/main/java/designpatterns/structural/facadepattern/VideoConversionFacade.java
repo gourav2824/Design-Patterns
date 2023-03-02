@@ -5,6 +5,8 @@ import designpatterns.structural.facadepattern.videoconversionlibrary.Format;
 import designpatterns.structural.facadepattern.videoconversionlibrary.FormatFactory;
 import designpatterns.structural.facadepattern.videoconversionlibrary.VideoConverter;
 
+// A Facade for providing a simple interface to a complex video conversion library
+
 public class VideoConversionFacade {
     public VideoFile convertVideo(VideoFile videoFile) {
         System.out.println("Video Conversion Facade: conversion started...");
